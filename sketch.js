@@ -1,5 +1,5 @@
 var helicopterIMG, helicopterSprite, packageSprite,packageIMG;
-var packageBody,ground,paper1,trashCan1;
+var packageBody,ground,paper1,trashCan1,trashCan2,trashCan3;
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -17,9 +17,11 @@ function setup() {
 
 
 	Engine.run(engine);
-	paper1 = new Paper(100,200,50,50);
+	paper1 = new Paper(100,200,30,30);
 	ground = new Ground(800,390,1600,20);
-	trashCan1 = new TrashCan1(940,290,150,170);
+	trashCan1= new TrashCan(1000,150,10,10);
+	trashCan2 = new TrashCan(1140,170,20,20);
+	trashCan3= new TrashCan(900,170,20,20);
 	keyPressed();
 }
 
@@ -30,6 +32,9 @@ function draw() {
   paper1.display();
   ground.display();
   trashCan1.display();
+  //trashCan2.display();
+  //trashCan3.display();
+  
 
  
 
@@ -38,7 +43,7 @@ function draw() {
 }
 function keyPressed(){
 	if(keyCode === UP_ARROW){
-		Matter.Body.applyForce(paper1.body,paper1.body.position,{x:210,y:-210});
+		Matter.Body.applyForce(paper1.body,paper1.body.position,{x:85,y:-85});
 	}
 }
 
